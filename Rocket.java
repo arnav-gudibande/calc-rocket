@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import java.io.IOException;
 import java.awt.geom.*;
 import java.awt.Color;
 import java.awt.Rectangle;
@@ -16,45 +17,58 @@ import java.awt.Graphics2D;
 import java.awt.geom.*;
 import java.awt.BasicStroke;
 import java.util.ArrayList;
-import java.util.Random;
+import java.util.Random;//imports all neccessary components
+import javax.swing.ImageIcon;
 
 public class Rocket extends JComponent implements ActionListener
 {
     public double dx, dy, d2x, d2y;
     public double x,y;
-    Ellipse2D.Double rocket;
+    ImageIcon rocket;
 
-    public Rocket(int x, int y, int dx, int dy, )//the explicit parameters for the BAll constructor
+    public Rocket(double x, double y, double dx, double dy, double d2x, double d2y ) throws IOException
     {
         
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.d2x = d2x;
+        this.d2y = d2y;
+        rocket = new ImageIcon(this.getClass()
+            .getResource("rocket.gif"));
     }
 
-    public void paintComponent(Graphics g)//necessary overriden method, the result of extending JFrame
+    public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
-        ball = new Ellipse2D.Double(x, y, d, d);
-        g2.setColor(setBallColor());
-        g2.fill(ball);
+        g2.translate(0,700);
+        int realx = (int) x;
+        int realy = (int) y;
+        rocket.paintIcon(this, g2, realx, realy);
     }
 
     public void actionPerformed(ActionEvent e)
     {
-        move();//when the timer calls itself, move the ball
+       try{
+           move();
+       } catch(IOException bb){
+           bb.printStackTrace();
+       }
     }
     
-    public void move(){
-        repaint();//repaints the frame and also adds to the speed that the ball is moving in
-        x+=dx;//speed is added to the dx
-        y+=dy;//speed is added to dy
-        if(y<=0) moveDown();//if any of the bounds are breached, then make the ball move accordingly
-        if(y>=540)moveUp();
-        if(x<=0) moveRight();
-        if(x>=760) moveLeft();
+    public void move() throws IOException{
+        x+=0.2;
+        y = -(calcY(x));
+        System.out.println(x + "       " + y);
+        repaint();
     }
 
-    public void moveUp()
-    {
-        dy += -1;//make the dx go down to move up in the frame
+    public double calcY(double x) {
+
+        y = Math.pow((x-300),2);
+        y = (-(y/10))+800;
+        return y;
     }
     
 }

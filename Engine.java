@@ -1,14 +1,25 @@
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import com.github.sarxos.webcam.Webcam;
+import java.awt.geom.*;
+import javax.swing.Timer;
+import java.awt.event.*;
+import java.io.*;
+import java.util.*;
+import java.awt.*;
+import javax.swing.*;
 
-/**
- * Write a description of class Engine here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Engine
 {
-   public static void main(String[] args) {
-       RocketStarter rStarter = new RocketStarter();
-       rStarter.start();
+   public static void main(String[] args) throws IOException{
+        JFrame j = new JFrame("Calculus AB - Rocket");
+        j.setSize(800,800);
+        Rocket r = new Rocket(200,0,0,0,0,0);
+        Timer t = new Timer(5,r);
+        j.add(r);
+        t.start();
+        j.setVisible(true);
     }
 }

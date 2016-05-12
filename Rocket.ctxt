@@ -1,20 +1,12 @@
 #BlueJ class context
-comment0.params=x\ y\ dx\ dy\ o\ d
-comment0.target=Rocket(int,\ int,\ int,\ int,\ int,\ int)
+comment0.params=x\ y\ dx\ dy\ d2x\ d2y
+comment0.target=Rocket(double,\ double,\ double,\ double,\ double,\ double)
 comment1.params=g
 comment1.target=void\ paintComponent(java.awt.Graphics)
 comment2.params=e
 comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.params=
 comment3.target=void\ move()
-comment4.params=
-comment4.target=void\ moveUp()
-comment5.params=
-comment5.target=void\ moveDown()
-comment6.params=
-comment6.target=void\ moveLeft()
-comment7.params=
-comment7.target=void\ moveRight()
-comment8.params=
-comment8.target=java.awt.Color\ setBallColor()
-numComments=9
+comment4.params=x
+comment4.target=double\ calcY(double)
+numComments=5
