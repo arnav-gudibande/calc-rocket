@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ move()
 comment4.params=x
 comment4.target=double\ calcY(double)
-numComments=5
+comment5.params=
+comment5.target=void\ stop()
+numComments=6

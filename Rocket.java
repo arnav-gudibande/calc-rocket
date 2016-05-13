@@ -51,7 +51,11 @@ public class Rocket extends JComponent implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
        try{
-           move();
+           if(y!=0){
+               move();
+            } else {
+                stop();
+            }
        } catch(IOException bb){
            bb.printStackTrace();
        }
@@ -60,15 +64,19 @@ public class Rocket extends JComponent implements ActionListener
     public void move() throws IOException{
         x+=0.2;
         y = -(calcY(x));
-        System.out.println(x + "       " + y);
         repaint();
     }
 
     public double calcY(double x) {
-
-        y = Math.pow((x-300),2);
-        y = (-(y/10))+800;
+        y = 0.05*(Math.pow((x-375),2));
+        y = ((-(y/10))+700);
+        System.out.println(x + "       " + y);
         return y;
+    }
+    
+    public void stop(){
+        y=0;
+        x=800;
     }
     
 }
