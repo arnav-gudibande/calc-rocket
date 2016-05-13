@@ -1,12 +1,5 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+A Java Program where a rocket follows the path of a scaled function and explodes at the end. Details of the function re given after the crash, such as distance travelled and average velocity.
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
-HOW TO START THIS PROJECT:
-AUTHORS:
-USER INSTRUCTIONS:
+By @arnav-gudibande and @nishand17
