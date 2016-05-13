@@ -25,6 +25,8 @@ public class Rocket extends JComponent implements ActionListener
     public double dx, dy, d2x, d2y;
     public double x,y;
     ImageIcon rocket;
+    ImageIcon temp = new ImageIcon();
+    ImageIcon blow;
 
     public Rocket(double x, double y, double dx, double dy, double d2x, double d2y ) throws IOException
     {
@@ -37,6 +39,9 @@ public class Rocket extends JComponent implements ActionListener
         this.d2y = d2y;
         rocket = new ImageIcon(this.getClass()
             .getResource("rocket.gif"));
+        blow = new ImageIcon(this.getClass()
+            .getResource("blow.gif"));
+        temp = rocket;
     }
 
     public void paintComponent(Graphics g)
@@ -45,16 +50,17 @@ public class Rocket extends JComponent implements ActionListener
         g2.translate(0,700);
         int realx = (int) x;
         int realy = (int) y;
-        rocket.paintIcon(this, g2, realx, realy);
+        temp.paintIcon(this, g2, realx, realy);
     }
 
     public void actionPerformed(ActionEvent e)
     {
        try{
-           if(y!=0){
-               move();
-            } else {
-                stop();
+          if(x<750) {
+              move();
+            }
+          else {
+              stop();
             }
        } catch(IOException bb){
            bb.printStackTrace();
@@ -75,8 +81,9 @@ public class Rocket extends JComponent implements ActionListener
     }
     
     public void stop(){
-        y=0;
-        x=800;
+        y=20;
+        x=751;
+        temp = blow;
     }
     
 }
