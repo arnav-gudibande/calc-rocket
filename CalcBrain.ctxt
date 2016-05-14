@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ findMax()
+comment1.params=
+comment1.target=void\ findZeros()
+comment2.params=
+comment2.target=void\ findROC()
+comment3.params=x
+comment3.target=void\ findIRC(double)
+comment4.params=x
+comment4.target=void\ findSpeed(double)
+comment5.params=x
+comment5.target=void\ speed(double)
+comment6.params=x
+comment6.target=void\ findDP(double)
+comment7.params=x
+comment7.target=void\ findTD(double)
+comment8.params=x
+comment8.target=double\ calcY(double)
+numComments=9

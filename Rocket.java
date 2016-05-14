@@ -22,8 +22,8 @@ import javax.swing.ImageIcon;
 
 public class Rocket extends JComponent implements ActionListener
 {
-    public double dx, dy, d2x, d2y;
-    public double x,y;
+    public static double dx, dy, d2x, d2y;
+    public static double x,y;
     ImageIcon rocket;
     ImageIcon temp = new ImageIcon();
     ImageIcon blow;
@@ -58,6 +58,7 @@ public class Rocket extends JComponent implements ActionListener
        try{
           if(x<750) {
               move();
+              calc();
             }
           else {
               stop();
@@ -72,11 +73,29 @@ public class Rocket extends JComponent implements ActionListener
         y = -(calcY(x));
         repaint();
     }
+    
+    public void calc(){
+        System.out.print('\u000C');
+        CalcBrain g = new CalcBrain();
+        System.out.println("f(t) = -0.005(t-375)^2 + 700");
+        System.out.println("v(t) = -0.01(t-375)");
+        System.out.println("a(t) = -0.01");
+        System.out.println();
+        g.findMax();
+        g.findZeros();
+        System.out.println();
+        g.findROC();
+        System.out.println();
+        g.findIRC(x);
+        g.speed(x);
+        g.findSpeed(x);
+        System.out.println();
+        g.findDP(x);
+        g.findTD(x);
+    }
 
     public double calcY(double x) {
-        y = 0.05*(Math.pow((x-375),2));
-        y = ((-(y/10))+700);
-        System.out.println(x + "       " + y);
+        y = -0.005*(Math.pow((x-375),2)) + 700;
         return y;
     }
     
