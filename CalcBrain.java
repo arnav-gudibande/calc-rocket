@@ -42,15 +42,15 @@ public class CalcBrain
     {
         double deriv = -0.01 * (x-375);
         if(deriv<0){
-            System.out.println("The Rocket's speed is increasing when t = "+(Math.floor(x * 1) / 1));
+            System.out.println("The Rocket's speed is increasing when t = "+(Math.floor(x * 1) / 1)+" s");
         } else {
-            System.out.println("The Rocket's speed is decreasing when t = "+(Math.floor(x * 1) / 1));
+            System.out.println("The Rocket's speed is decreasing when t = "+(Math.floor(x * 1) / 1)+" s");
         }
     }
     
     public void speed(double x){
         double deriv = -0.01 * (x-375);
-        System.out.println("Rocket's speed at t = "+Math.floor(x)+" is "+Math.abs((Math.floor(deriv * 100) / 100))+ " ft/sec");
+        System.out.println("Rocket's speed at t = "+Math.floor(x)+" s"+" is "+Math.abs((Math.floor(deriv * 100) / 100))+ " ft/sec");
     }
     
     public void findDP(double x)
