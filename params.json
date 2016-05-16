@@ -1,0 +1,6 @@
+{
+  "name": "Calculus Rocket",
+  "tagline": "AP Calc AB Final Project",
+  "body": "###Calc Rocket\r\n\r\nA Java Program where a rocket follows the path of a scaled function and explodes at the end. During the rocket's flight, details such as total distance, displacement, instantaneous velocity, etc. are calculated and shown to the user.\r\n\r\nAP Calculus AB Final Project\r\n\r\n###Authors\r\n\r\nBy [@arnav-gudibande] (https://github.com/arnav-gudibande) and [@nishand17] (https://github.com/nishand17)\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
