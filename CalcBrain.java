@@ -63,7 +63,6 @@ public class CalcBrain
     {
         double y = Math.floor(-0.005*(Math.pow((x-375),2)) + 700);
         double dis = Math.abs(700-y);
-        
         if(x<375) System.out.println("Total Distance: "+y+" ft");
         if(x>=375) System.out.println("Total Distance: "+(dis+700)+" ft");
     }
