@@ -4,4 +4,4 @@ A Java Program where a rocket follows the path of a scaled function and explodes
 
 AP Calculus AB Final Project
 
-By @arnav-gudibande[https://github.com/arnav-gudibande] and @nishand17
+By [@arnav-gudibande] (https://github.com/arnav-gudibande) and [@nishand17] (https://github.com/nishand17)
